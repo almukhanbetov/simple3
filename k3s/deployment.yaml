@@ -16,7 +16,7 @@ spec:
       - name: simple3-container
         image: ghcr.io/almukhanbetov/simple3:latest
         ports:
-        - containerPort: 8205
+        - containerPort: 8206
         env:
         - name: DATABASE_URL
           valueFrom:
