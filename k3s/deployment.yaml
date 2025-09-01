@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple3
+  template:
+    metadata:
+      labels:
+        app: simple3
+    spec:
+      containers:
+      - name: simple3-container
+        image: ghcr.io/almukhanbetov/simple3:latest
+        ports:
+        - containerPort: 8205
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: simple3-secrets
+              key: database_url

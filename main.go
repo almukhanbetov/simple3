@@ -20,5 +20,5 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"DATABASE_URL": dbUrl})
 	})
 
-	router.Run(":8205")
+	router.Run(":8206")
 }
